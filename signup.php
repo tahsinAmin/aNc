@@ -1,5 +1,7 @@
 <?php
 
+  include('configs\db_connect.php');
+
   $first_name = $last_name = $location = $age = $occupation = $visa_masterCard = $password = $email = '';
 
   $errors = array('first_name' => '', 'last_name' => '', 'location' => '',
@@ -32,6 +34,10 @@
     if(empty($_POST['location'])){
       $errors['location'] = 'Location is required';
     } else{
+
+      $email = mysqli_real_escape_string($conn, $_POST['email']);
+      $email = mysqli_real_escape_string($conn, $_POST['email']);
+      $email = mysqli_real_escape_string($conn, $_POST['email']);
       $location = $_POST['location'];
     }
 
@@ -60,7 +66,7 @@
       $errors['visa_masterCard'] = 'visa_masterCard is required';
     } else{
       $visa_masterCard = $_POST['visa_masterCard'];
-      if(!preg_match('/[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/', $visa_masterCard)){
+      if(!preg_match('/[0-9][0-9][0-9][0-9][0-9][0-9]/', $visa_masterCard)){
         $errors['visa_masterCard'] = 'Visa MasterCard must be 10 digits';
       }
     }
@@ -70,8 +76,8 @@
       $errors['password'] = 'password is required';
     } else{
       $password = $_POST['password'];
-      if(!preg_match('/^[a-zA-Z]+$/', $password)){
-        $errors['password'] = 'password must be letters only';
+      if(!preg_match('/^[a-zA-Z0-9]+$/', $password)){
+        $errors['password'] = 'password must be letters and numbers only';
       }
     }
 
@@ -88,8 +94,29 @@
     if (array_filter($errors)) {
       // echo "errors in the form";
     }else {
-      // echo "form is valid";
-      header('Location: index.php');
+      $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
+      $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
+      $location = mysqli_real_escape_string($conn, $_POST['location']);
+      $age = mysqli_real_escape_string($conn, $_POST['age']);
+      $occupation = mysqli_real_escape_string($conn, $_POST['occupation']);
+      $visa_masterCard = mysqli_real_escape_string($conn, $_POST['visa_masterCard']);
+      $password = mysqli_real_escape_string($conn, $_POST['password']);
+      $email = mysqli_real_escape_string($conn, $_POST['email']);
+
+      $sql = "INSERT INTO buyer_profile(first_name, last_name, location, age, occupation, visa_masterCard, password, email)
+       VALUES('$first_name', '$last_name', '$location', '$age', '$occupation', '$visa_masterCard', '$password', '$email')";
+
+      // save to db and check
+      if(mysqli_query($conn, $sql)){
+        // sucess
+        // echo "form is valid";
+        header('Location: dash.php');
+      }else{
+        // fails
+        echo "Query Error: " . mysqli_error($conn);
+      }
+
+
     }
 
 	} // end POST check

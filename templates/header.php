@@ -1,3 +1,9 @@
+<!-- https://github.com/tahsinAmin/aNc.git -->
+<!-- NOTE: WORK REMAIN
+    1. SIGN OUT button if signed in
+  2. ..
+-->
+
 <head>
   <meta charset="utf-8">
   <title>Online Stationary</title>
@@ -20,10 +26,10 @@
   <body class="grey lighten-4">
     <nav class="white z-depth-0">
       <div class="container">
-        <a href="#" class="brand-logo brand-text">Arts&Crafts</a>
+        <a href="dash.php" class="brand-logo brand-text">Arts&Crafts</a> // Work remain. Only goes iff the user is signed in
         <ul id="nav-mobile" class="right hide-on-small-and-down">
           <li>
-            <!-- <a href="#" class="btn brand z-depth-0">Sign In</a> -->
+            <a href="signup.php" class="btn brand z-depth-0">Sign Up</a>
           </li>
         </ul>
       </div>
