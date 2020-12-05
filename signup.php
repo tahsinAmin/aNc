@@ -1,6 +1,6 @@
 <?php
 
-  include('configs\db_connect.php');
+  include('config\db_connect.php');
 
   $first_name = $last_name = $location = $age = $occupation = $visa_masterCard = $password = $email = '';
 

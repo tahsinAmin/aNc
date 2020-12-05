@@ -1,8 +1,8 @@
 <?php
-  include('configs\db_connect.php');
+  include('config\db_connect.php');
 
   // write query for all buyer_profile
-  $sql = "SELECT item_name, sell_price, in_stock FROM item_info";
+  $sql = "SELECT item_name, sell_price, in_stock, item_id FROM item_info";
 
   // make query & get result
   $result = mysqli_query($conn, $sql);
@@ -38,7 +38,7 @@
               <div>In Stock: <?php echo htmlspecialchars($item_info['in_stock']) ?></div>
             </div>
             <div class="card-action right-align">
-              <a href="#" class="brand-text">More Info</a>
+              <a href="details.php?item_id=<?php echo $item_info['item_id'] ?>" class="brand-text">More Info</a>
             </div>
           </div>
         </div>
