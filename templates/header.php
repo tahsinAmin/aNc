@@ -29,8 +29,7 @@
         <a href="dash.php" class="brand-logo brand-text">Arts&Crafts</a> // Work remain. Only goes iff the user is signed in
         <ul id="nav-mobile" class="right hide-on-small-and-down">
           <li>
-            <a href="signup.php" class="btn brand z-depth-0">Sign Up</a>
-            <a href="signin.php" class="btn brand z-depth-0">Sign In</a>
+            <a href="index.php" class="btn brand z-depth-0">Log Out</a>
           </li>
         </ul>
       </div>

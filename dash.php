@@ -1,3 +1,5 @@
+<!-- NOTE: WORK REMAIN
+1. MAKE NSURE THAT A USER CAN'T LOGIN USING THE URL -->
 <?php
   include('config\db_connect.php');
 
