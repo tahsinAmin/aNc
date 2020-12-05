@@ -34,14 +34,10 @@
     if(empty($_POST['location'])){
       $errors['location'] = 'Location is required';
     } else{
-
-      $email = mysqli_real_escape_string($conn, $_POST['email']);
-      $email = mysqli_real_escape_string($conn, $_POST['email']);
-      $email = mysqli_real_escape_string($conn, $_POST['email']);
       $location = $_POST['location'];
     }
 
-    // check location
+    // check age
     if(empty($_POST['age'])){
       $errors['age'] = 'Age is required';
     } else{
