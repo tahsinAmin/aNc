@@ -6,7 +6,7 @@
 	include('config/db_connect.php');
 
 	// check GET request item_id param
-	if (isset($_GET['item_id'])) {
+	if (isset($_GET['item_id']) && isset($_GET['buyer_id'])) {
 		// print_r($_GET['item_id']);
 		$item_id = mysqli_real_escape_string($conn, $_GET['item_id']);
 
