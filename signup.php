@@ -106,7 +106,7 @@
       if(mysqli_query($conn, $sql)){
         // sucess
         // echo "form is valid";
-        header('Location: dash.php');
+        header('Location: signin.php');
       }else{
         // fails
         echo "Query Error: " . mysqli_error($conn);
