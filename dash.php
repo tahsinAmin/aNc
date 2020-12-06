@@ -3,21 +3,16 @@
 <?php
   include('config\db_connect.php');
 
-  // write query for all buyer_profile
-  $sql = "SELECT item_name, sell_price, in_stock, item_id FROM item_info";
-
-  // make query & get result
-  $result = mysqli_query($conn, $sql);
-
-  // fetchg the resulting rows as an array
-  $items_info = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-  // freee result from memory
-  mysqli_free_result($result);
-
-  // close the connectiuon
-  mysqli_close($conn);
-  // print_r($items_info);
+  // check GET request item_id param
+	if (isset($_GET['buyer_id'])) {
+    $sql = "SELECT item_name, sell_price, in_stock, item_id FROM item_info";
+    $result = mysqli_query($conn, $sql);
+    $items_info = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    mysqli_free_result($result);
+    mysqli_close($conn);
+	}else {
+    echo "Query Error: " . mysqli_error($conn);
+	}
 
  ?>
 
