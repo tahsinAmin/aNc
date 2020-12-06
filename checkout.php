@@ -1,7 +1,7 @@
 <!-- NOTE:
 1. Get a go back button here as well -->
 <?php
-  include('config\db_connect.php');
+  include('config/db_connect.php');
 
 //  Comment below
   if (isset($_GET['buyer_id'])) {
@@ -44,12 +44,8 @@
                   <td class="center"><?php echo htmlspecialchars($list['frequency']) ?></td>
                   <td class="center"><?php echo htmlspecialchars($list['amount_to_pay']) ?></td>
                   <td>
-                    <form class="" action="checkout.php" method="POST">
-                        <input type="hidden" name="buyer_id_to_delete" value="<?php echo $list['buyer_id'] ?>">
-                        <input type="hidden" name="item_id_to_delete" value="<?php echo $list['item_id'] ?>">
-                        <input type="submit" class="btn deep-orange" name="delete" value="Delete"></input>
-                    </input>
-                    </form>
+
+                    <a href="check_del.php?buyer_id=<?php echo $list['buyer_id'] ?>&item_id=<?php echo $list['item_id'] ?>" class="brand-text">Delete</a>
                   </td>
                 </tr>
               <?php  endforeach; ?>

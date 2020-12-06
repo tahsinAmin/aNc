@@ -1,7 +1,7 @@
 <!-- NOTE: WORK REMAIN
 1. MAKE NSURE THAT A USER CAN'T LOGIN USING THE URL -->
 <?php
-  include('config\db_connect.php');
+  include('config/db_connect.php');
 
   // check GET request item_id param
 	if (isset($_GET['buyer_id'])) {
