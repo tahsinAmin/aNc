@@ -36,7 +36,7 @@
 		<div>
 				<?php if($item): ?>
 				<div class="col s6 md3">
-					<a href="dash.php" class="btn brand">Go Back</a>
+					<a href="dash.php?buyer_id=<?php echo $_GET['buyer_id']?>" class="btn brand">Go Back</a>
 					<br><br>
 					<!-- <button type="button" name="button" class="btn left-align"></button> -->
 					<div class="card z-depth-0">
