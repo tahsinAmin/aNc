@@ -59,7 +59,7 @@
 <html lang="en" dir="ltr">
 	<?php include('templates/header.php'); ?>
 	<br><br><br><br><br><br>
-	<div class="container center">
+	<div class="container">
 		<div>
 				<?php if($item): ?>
 				<div class="col s6 md3">
@@ -75,7 +75,9 @@
 							<input type="text" name="buyer_id" value="<?php echo "$buyer_id"; ?>" hidden>
 							<input type="number" name="item_id" value="<?php echo "$item_id"; ?>" hidden>
 							Quantity:<input type="number" name="frequency"min=0 max="<?php echo htmlspecialchars($item['in_stock']); ?>"/>
-							<input type="submit" name="submit" value="Add" class="btn brand">
+							<div class="right-align">
+								<input type="submit" name="submit" value="Add" class="btn brand">
+							</div>
 						</form>
 
 					</div>

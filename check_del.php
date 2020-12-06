@@ -7,7 +7,7 @@
 
     $sql = "DELETE FROM added_to_cart WHERE buyer_id='".$buyer_id."' AND item_id='".$item_id."'";
     if (mysqli_query($conn, $sql)) {
-      echo '<script type ="text/Javascript">alert("THE Item THAT YOU CHOSE TO DELETE, HAS BEEN REMOVED SUCCESSFULLY.");</script>';
+      header("Location:checkout.php?buyer_id=".$buyer_id."");
     }
 	}
 ?>

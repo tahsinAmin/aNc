@@ -24,6 +24,9 @@
   <?php include('templates/header.php') ?>
   <br><br><br><br>
   <section class="container center">
+    <div class="left-align">
+      <a href="dash.php?buyer_id=<?php echo $_GET['buyer_id']?>" class="btn brand">Go Back</a>
+    </div>
     <h4 class="center">Shopping Cart</h4>
     <div class="card">
       <div class="col s6 md3">
@@ -44,7 +47,6 @@
                   <td class="center"><?php echo htmlspecialchars($list['frequency']) ?></td>
                   <td class="center"><?php echo htmlspecialchars($list['amount_to_pay']) ?></td>
                   <td>
-
                     <a href="check_del.php?buyer_id=<?php echo $list['buyer_id'] ?>&item_id=<?php echo $list['item_id'] ?>" class="brand-text">Delete</a>
                   </td>
                 </tr>
