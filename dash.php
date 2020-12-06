@@ -21,6 +21,7 @@
 
   <?php include('templates/header.php') ?>
 
+  <br><br><br><br>
   <h4 class="center grey-text">Wow!</h4>
 
   <div class="container">

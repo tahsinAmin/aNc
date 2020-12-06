@@ -33,6 +33,7 @@
                   <th class="center">Item ID</th>
                   <th class="center">Quantity</th>
                   <th class="center">Amount</th>
+                  <th></th>
               </tr>
             </thead>
 
@@ -42,6 +43,14 @@
                   <td class="center"><?php echo htmlspecialchars($list['item_id']) ?></td>
                   <td class="center"><?php echo htmlspecialchars($list['frequency']) ?></td>
                   <td class="center"><?php echo htmlspecialchars($list['amount_to_pay']) ?></td>
+                  <td>
+                    <form class="" action="checkout.php" method="POST">
+                        <input type="hidden" name="buyer_id_to_delete" value="<?php echo $list['buyer_id'] ?>">
+                        <input type="hidden" name="item_id_to_delete" value="<?php echo $list['item_id'] ?>">
+                        <input type="submit" class="btn deep-orange" name="delete" value="Delete"></input>
+                    </input>
+                    </form>
+                  </td>
                 </tr>
               <?php  endforeach; ?>
             </tbody>
