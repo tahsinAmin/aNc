@@ -31,28 +31,20 @@
         <table>
             <thead>
               <tr>
-                  <th>Item ID</th>
-                  <th>Quantity</th>
-                  <th>Amount</th>
+                  <th class="center">Item ID</th>
+                  <th class="center">Quantity</th>
+                  <th class="center">Amount</th>
               </tr>
             </thead>
 
             <tbody>
-              <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
-              </tr>
-              <tr>
-                <td>Alan</td>
-                <td>Jellybean</td>
-                <td>$3.76</td>
-              </tr>
-              <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-              </tr>
+              <?php foreach ($lists as $list): ?>
+                <tr>
+                  <td class="center"><?php echo htmlspecialchars($list['item_id']) ?></td>
+                  <td class="center"><?php echo htmlspecialchars($list['frequency']) ?></td>
+                  <td class="center"><?php echo htmlspecialchars($list['amount_to_pay']) ?></td>
+                </tr>
+              <?php  endforeach; ?>
             </tbody>
           </table>
         </div>

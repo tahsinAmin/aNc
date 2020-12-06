@@ -31,11 +31,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<?php include('templates/header.php'); ?>
-
+	<br><br><br><br><br><br>
 	<div class="container center">
 		<div>
 				<?php if($item): ?>
 				<div class="col s6 md3">
+					<a href="dash.php" class="btn brand">Go Back</a>
+					<br><br>
+					<!-- <button type="button" name="button" class="btn left-align"></button> -->
 					<div class="card z-depth-0">
 						<div class="card-content center">
 							<h4><?php echo htmlspecialchars($item['item_name']); ?></h4>
@@ -53,6 +56,5 @@
 			<h5>No such Item exists!</h5>
 		<?php endif; ?>
 	</div>
-
   <?php include('templates/footer.php'); ?>
 </html>

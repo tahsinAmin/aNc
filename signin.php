@@ -25,15 +25,15 @@
     if (array_filter($errors)) {
       // echo "errors in the form";
     }else {
-      $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
+      $fn = mysqli_real_escape_string($conn, $_POST['first_name']);
       $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-      $sql1 = "SELECT password FROM buyer_profile WHERE first_name='".$first_name."'";
-      $result1 = mysqli_query($conn, $sql1);
-      $row1 = mysqli_fetch_assoc($result1);
+      $sql = "SELECT password, buyer_id FROM buyer_profile WHERE first_name='".$fn."'";
+      $result = mysqli_query($conn, $sql);
+      $userInfo = mysqli_fetch_assoc($result);
 
-      if($row1['password'] == $password){
-        header("Location:dash.php");
+      if($userInfo['password'] == $password){
+        header("Location:dash.php?buyer_id=".$userInfo['buyer_id']."");
         exit();
       }else{
         echo '<script type ="text/Javascript">alert("NOT A USER OF THIS WEBSITE");</script>';

@@ -26,7 +26,8 @@
   <body class="grey lighten-4">
     <nav class="white z-depth-0">
       <div class="container">
-        <a href="#" class="brand-logo brand-text">Arts&Crafts</a> // Work remain. Only goes iff the user is signed in
+        <!-- // Work remain. Only goes iff the user is signed in -->
+        <a href="#" class="brand-logo brand-text">Arts&Crafts</a>
         <ul id="nav-mobile" class="right hide-on-small-and-down">
           <li>
             <a href="signup.php" class="btn brand z-depth-0">Sign Up</a>
