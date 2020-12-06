@@ -1,3 +1,4 @@
+<!-- C:\xampp\htdocs\arts -->
 <!-- https://github.com/tahsinAmin/aNc.git -->
 <!-- NOTE: WORK REMAIN
     1. SIGN OUT button if signed in
@@ -34,7 +35,12 @@
       <div class="container">
         <a href="dash.php" class="brand-logo brand-text">Arts&Crafts</a> // Work remain. Only goes iff the user is signed in
         <ul id="nav-mobile" class="right hide-on-small-and-down">
-          <li><a href="checkout.php" class="btn brand z-depth-0 btn-floating btn-large pulse" style="background-color: #cbb09c !important;"><i class="fas fa-shopping-cart"></i></a></li>
+          <li>
+            <a href="checkout.php?buyer_id=<?php echo $_GET['buyer_id'] ?>"
+             class="btn brand z-depth-0  pulse" style="background-color: #cbb09c !important;">
+              Checkout
+            </a>
+          </li>
           <li><a href="index.php" class="btn brand z-depth-0">Log Out</a>
           </li>
         </ul>

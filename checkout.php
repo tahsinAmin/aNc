@@ -1,21 +1,20 @@
+<!-- NOTE:
+1. Get a go back button here as well -->
 <?php
   include('config\db_connect.php');
 
-  // write query for all buyer_profile
-  $sql = "SELECT * from added_to_cart where buyer_id=1";
-
-  // make query & get result
-  $result = mysqli_query($conn, $sql);
-
-  // fetchg the resulting rows as an array
-  $lists = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-  // freee result from memory
-  mysqli_free_result($result);
-
-  // close the connectiuon
-  mysqli_close($conn);
-  // print_r($lists);
+//  Comment below
+  if (isset($_GET['buyer_id'])) {
+    $buyer_id = $_GET['buyer_id'];
+    $sql = "SELECT * from added_to_cart where buyer_id='".$buyer_id."'";
+    $result = mysqli_query($conn, $sql);
+    $lists = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    mysqli_free_result($result);
+    mysqli_close($conn);
+  }else {
+    echo "Query Error: " . mysqli_error($conn);
+  }
+  //  Comment above
  ?>
 
 

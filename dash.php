@@ -35,7 +35,7 @@
               <div>In Stock: <?php echo htmlspecialchars($item_info['in_stock']) ?></div>
             </div>
             <div class="card-action right-align">
-              <a href="details.php?item_id=<?php echo $item_info['item_id'] ?>&buyer_id=<?php echo $_GET['buyer_id'] ?>" class="brand-text">More Info</a>
+              <a href="details.php?buyer_id=<?php echo $_GET['buyer_id'] ?>&item_id=<?php echo $item_info['item_id'] ?>" class="brand-text">More Info</a>
             </div>
           </div>
         </div>
