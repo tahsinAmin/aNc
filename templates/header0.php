@@ -6,10 +6,15 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Online Stationary</title>
+  <title>Arts&Crafts</title>
   <!-- Compiled and minified CSS -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-   <style media="screen">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Yellowtail&display=swap" rel="stylesheet">
+<style media="screen">
+     body{
+       font-family: 'Roboto', sans-serif;
+     }
      .brand{
        background: #009688 !important;
      }
@@ -27,7 +32,7 @@
     <nav class="white z-depth-0">
       <div class="container">
         <!-- // Work remain. Only goes iff the user is signed in -->
-        <a href="#" class="brand-logo brand-text">Arts&Crafts</a>
+        <a href="#" class="brand-logo brand-text" style="font-family: 'Yellowtail', cursive;">Arts&Crafts</a>
         <ul id="nav-mobile" class="right hide-on-small-and-down">
           <li>
             <a href="signup.php" class="btn brand z-depth-0">Sign Up</a>

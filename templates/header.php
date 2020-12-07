@@ -5,13 +5,15 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Online Stationary</title>
+  <title>Arts&Crafts</title>
   <!-- Compiled and minified CSS -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-
-  <script src="https://kit.fontawesome.com/1b49d7e787.js"></script>
+   <<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Yellowtail&display=swap" rel="stylesheet"> <script src="https://kit.fontawesome.com/1b49d7e787.js"></script>
    <style media="screen">
+     body{
+       font-family: 'Roboto', sans-serif;
+     }
      .brand{
        background: #009688 !important;
      }
@@ -40,7 +42,7 @@
   <body class="grey lighten-4">
     <nav class="white z-depth-0">
       <div class="container">
-        <a href="dash.php?buyer_id=<?php echo $buyer_id ?>" class="brand-logo brand-text">Arts&Crafts</a> // Work remain. Only goes iff the user is signed in
+        <a href="dash.php?buyer_id=<?php echo $buyer_id ?>" class="brand-logo brand-text" style="font-family: 'Yellowtail', cursive;">Arts&Crafts</a> // Work remain. Only goes iff the user is signed in
         <ul id="nav-mobile" class="right hide-on-small-and-down">
           <li>
             <a href="checkout.php?buyer_id=<?php echo $_GET['buyer_id'] ?>"
