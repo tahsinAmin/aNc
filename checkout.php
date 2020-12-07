@@ -1,5 +1,5 @@
 <!-- NOTE:
-1. Get a go back button here as well -->
+1. Show total value beside confirm purchase -->
 <?php
   include('config/db_connect.php');
 
@@ -29,7 +29,7 @@
     </div>
     <h4 class="center">Shopping Cart</h4>
     <div class="card">
-      <div class="col s6 md3">
+      <div class="col s6 md4">
         <table>
             <thead>
               <tr>
@@ -54,6 +54,10 @@
             </tbody>
           </table>
         </div>
+
+    </div>
+    <div class="center">
+      <input type="submit" name="submit" value="Confirm Purchase" class="btn brand">
     </div>
   </section>
 

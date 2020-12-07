@@ -59,6 +59,9 @@
 			<div class="center">
 				<input type="submit" name="submit" value="Submit" class="btn brand z-depth-0">
 			</div>
+      <div class="center">
+        <a href="verify.php">Forgot Password?</a>
+      </div>
 		</form>
 	</section>
 
