@@ -50,7 +50,8 @@
               Checkout
             </a>
           </li>
-          <li><a href="index.php" class="btn brand z-depth-0">Log Out</a>
+          <li>
+            <a href="check_del.php?buyer_id=<?php echo $buyer_id ?>" class="btn brand z-depth-0">Log Out</a>
           </li>
         </ul>
       </div>
