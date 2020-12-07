@@ -1,5 +1,5 @@
 <?php
-  include('config/db_connect.php');
+  $link = include('config/db_connect.php');
 
   if (isset($_GET['buyer_id']) && isset($_GET['visa_masterCard'])) {
     $buyer_id = $_GET['buyer_id'];
@@ -11,42 +11,46 @@
 
     echo "$visa_masterCard" ."<br/>";
     // echo "$buyer_info['visa_masterCard']" ."<br/>";
-    print_r($buyer_info);
-    echo "<br/>";
+    // print_r($buyer_info);
+    // echo "<br/>";
 
 
 
     if ($visa_masterCard == $buyer_info['visa_masterCard']) {
 
-      $sql2 = "SELECT added_to_cart.item_id AS item_ids FROM added_to_cart";
+      $sql2 = "SELECT item_id AS item_ids FROM added_to_cart";
       $result2 = mysqli_query($conn, $sql2);
       $item_ids = mysqli_fetch_all($result2, MYSQLI_ASSOC);
-      mysqli_free_result($result2);
       // print_r($buyer_info);
       // echo "<br/>";
-      // print_r($item_ids);
-      // echo "<br/>";
-      //
+      print_r($item_ids);
 
-      $sql2 = "DELETE FROM added_to_cart";
+      // $sql3 = "DELETE FROM added_to_cart";
+      // $result2 = mysqli_query($conn, $sql2);
+
+      $emptyArray = [];
+
 
       foreach($item_ids as $item_id){
-
-        // print_r($item_id);
-        // echo "<br/>";
-         $sql3 =  "INSERT INTO sold_info(buyer_id, item_id, profit_gain) VALUES ($buyer_id, $item_id, 80)";
-
-         if(mysqli_query($conn, $sql3)){
-         }else{
-           echo "Query Error: " . mysqli_error($conn);
-          }
+        foreach($item_id as $i){
+          array_push($emptyArray,$i);
+        }
       }
-    }else{
-      echo "Error";
+
+      $emptyArray = array_unique($emptyArray);
+      // print_r($emptyArray);
+
+      foreach ($emptyArray as $i) {
+        $sql3 =  "INSERT INTO sold_info(buyer_id, item_id, profit_gain) VALUES ($buyer_id, $i, 80)";
+        $result3 = mysqli_query($conn, $sql3);
+        if(!$result3){
+          echo "Query Error: " . mysqli_error($conn);
+        }
+      }
+      // echo "$buyer_id";
+      mysqli_close($conn);
+      header("Location:dash.php?buyer_id=".$buyer_id."");
     }
-    echo "$buyer_id";
-    // mysqli_close($conn);
-    // header("Location:dash.php?buyer_id=".$buyer_id."");
   } else if (isset($_GET['buyer_id'])) {
     $buyer_id = $_GET['buyer_id'];
     $sql = "DELETE FROM added_to_cart";

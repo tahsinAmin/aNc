@@ -33,7 +33,7 @@
 		$amount = $frequency * $item['sell_price'];
 		echo ($amount);
 
-		$sql2 = "INSERT INTO added_to_cart(buyer_id, item_id, frequency, amount_to_pay) VALUES('$buyer_id', '$item_id', '$frequency', '$amount')";
+		$sql2 = "INSERT INTO added_to_cart(buyer_id, item_id, frequency, amount_to_pay) VALUES($buyer_id, '$item_id', '$frequency', '$amount')";
 
 		// save to db and check
 		if(mysqli_query($conn, $sql2)){
