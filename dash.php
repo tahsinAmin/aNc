@@ -5,6 +5,7 @@
 
   // check GET request item_id param
 	if (isset($_GET['buyer_id'])) {
+    $buyer_id = $_GET['buyer_id'];
     $sql = "SELECT item_name, sell_price, in_stock, item_id FROM item_info";
     $result = mysqli_query($conn, $sql);
     $items_info = mysqli_fetch_all($result, MYSQLI_ASSOC);
