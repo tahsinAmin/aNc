@@ -1,5 +1,5 @@
 <!-- NOTE:
-1. Show total value beside confirm purchase -->
+1. how do i deduct the frequency of the items -->
 <?php
   include('config/db_connect.php');
 
@@ -41,11 +41,13 @@
             </thead>
 
             <tbody>
+              <?php $sum = 0; ?>
               <?php foreach ($lists as $list): ?>
                 <tr>
                   <td class="center"><?php echo htmlspecialchars($list['item_id']) ?></td>
                   <td class="center"><?php echo htmlspecialchars($list['frequency']) ?></td>
                   <td class="center"><?php echo htmlspecialchars($list['amount_to_pay']) ?></td>
+                  <?php $sum += $list['amount_to_pay'] ?>
                   <td>
                     <a href="check_del.php?buyer_id=<?php echo $list['buyer_id'] ?>&item_id=<?php echo $list['item_id'] ?>" class="brand-text">Delete</a>
                   </td>
@@ -56,8 +58,16 @@
         </div>
 
     </div>
-    <div class="center">
-      <input type="submit" name="submit" value="Confirm Purchase" class="btn brand">
+    <div class="row">
+      <div class="col s12" style="font-size: 20px">
+
+        <h5>Total Amount: <?php echo "$" . $sum ?></h5>
+        Enter PIN to confirm Purchase:
+        <div class="input-field inline">
+          <input type="password" class="">
+        </div>
+        <input type="submit" name="submit" value="Confirm Purchase" class="input-field btn brand">
+      </div>
     </div>
   </section>
 

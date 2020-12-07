@@ -74,7 +74,6 @@ if(isset($_POST['submit'])){
       <input type="text" name="password" value="<?php echo htmlspecialchars($password) ?>">
       <div class="red-text"><?php echo $errors['password']; ?></div>
 
-
 			<div class="center">
 				<input type="submit" name="submit" value="Submit" class="btn brand z-depth-0">
 			</div>
