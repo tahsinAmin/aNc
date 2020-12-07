@@ -1,9 +1,9 @@
+
 <!-- NOTE:
 1. how do i deduct the frequency of the items -->
 <?php
   include('config/db_connect.php');
 
-//  Comment below
   if (isset($_GET['buyer_id'])) {
     $buyer_id = $_GET['buyer_id'];
     $sql = "SELECT * from added_to_cart where buyer_id='".$buyer_id."'";
@@ -14,7 +14,46 @@
   }else {
     echo "Query Error: " . mysqli_error($conn);
   }
-  //  Comment above
+
+  $first_name = $password = '';
+
+  $errors = array('fname_or_pass' => '');
+
+  if(isset($_POST['submit'])){
+
+    // check first_name
+    if(empty($_POST['first_name'])){
+      $errors['fname_or_pass'] = 'First Name or Password is incorrect';
+    } else{
+      $first_name = $_POST['first_name'];
+    }
+
+    // check password
+    if(empty($_POST['password'])){
+      $errors['fname_or_pass'] = 'First Name or Password is incorrect';
+    } else{
+      $password = $_POST['password'];
+    }
+
+    if (array_filter($errors)) {
+      // echo "errors in the form";
+    }else {
+      $fn = mysqli_real_escape_string($conn, $_POST['first_name']);
+      $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+      $sql = "SELECT password, buyer_id FROM buyer_profile WHERE first_name='".$fn."'";
+      $result = mysqli_query($conn, $sql);
+      $userInfo = mysqli_fetch_assoc($result);
+
+      if($userInfo['password'] == $password){
+        header("Location:dash.php?buyer_id=".$userInfo['buyer_id']."");
+        exit();
+      }else{
+        echo '<script type ="text/Javascript">alert("NOT A USER OF THIS WEBSITE");</script>';
+      }
+    }
+  } // end POST check
+
  ?>
 
 
@@ -56,21 +95,20 @@
             </tbody>
           </table>
         </div>
+      </div>
+    </section>
 
-    </div>
-    <div class="row">
-      <div class="col s12" style="font-size: 20px">
-
-        <h5>Total Amount: <?php echo "$" . $sum ?></h5>
-        Enter PIN to confirm Purchase:
-        <div class="input-field inline">
-          <input type="password" class="">
-        </div>
+    <form class="col s6 md3 center" action="index.html" method="post">
+      <h5>Total Amount: <?php echo "OMR " . $sum ?></h5>
+      Enter PIN to confirm Purchase:
+      <div class="input-field inline">
+        <input name="visa_masterCard" type="password" class="">
+      </div>
+      <input type="hidden" name="buyer_id" value="<?php echo $buyer_id; ?>">
+      <div class="right-align">
         <input type="submit" name="submit" value="Confirm Purchase" class="input-field btn brand">
       </div>
-    </div>
-  </section>
+    </form>
 
   <?php include('templates/footer.php') ?>
 </body>
-</html>
