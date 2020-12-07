@@ -23,10 +23,7 @@
       $item_ids = mysqli_fetch_all($result2, MYSQLI_ASSOC);
       // print_r($buyer_info);
       // echo "<br/>";
-      print_r($item_ids);
-
-      // $sql3 = "DELETE FROM added_to_cart";
-      // $result2 = mysqli_query($conn, $sql2);
+      // print_r($item_ids);
 
       $emptyArray = [];
 
@@ -47,6 +44,9 @@
           echo "Query Error: " . mysqli_error($conn);
         }
       }
+
+      $sql3 = "DELETE FROM added_to_cart";
+      $result3 = mysqli_query($conn, $sql3);
       // echo "$buyer_id";
       mysqli_close($conn);
       header("Location:dash.php?buyer_id=".$buyer_id."");
