@@ -1,8 +1,6 @@
 <!-- C:\xampp\htdocs\arts -->
 <!-- https://github.com/tahsinAmin/aNc.git -->
 <!-- NOTE: WORK REMAIN
-    1. SIGN OUT button if signed in
-  2. ..
 -->
 
 <head>

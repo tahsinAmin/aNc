@@ -68,7 +68,14 @@
 					<div class="card z-depth-0">
 						<div class="card-content center">
 							<h4><?php echo htmlspecialchars($item['item_name']); ?></h4>
-							<p><?php  echo htmlspecialchars($item['item_description']); ?></p>
+							<p>
+								<ul style="font-size: 20px;">
+									<?php foreach (explode(',', $item['item_description']) as $desc): ?>
+										<li><?php echo htmlspecialchars($desc); ?></li>
+									<?php endforeach; ?>
+								</ul>
+								<!-- <?php  echo htmlspecialchars($item['item_description']); ?> -->
+							</p>
 						</div>
 
 						<form action="details.php" method= "POST">
