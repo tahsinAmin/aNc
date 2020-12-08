@@ -54,7 +54,7 @@
          background-image: url('img/n.jpg');
          height: 100vh;
        }
-       
+
    </style>
 </head>
   <body class="">
@@ -65,7 +65,7 @@
         </a>
         <ul id="nav-mobile" class="right hide-on-small-and-down">
           <li>
-            <a href="checkout.php?buyer_id=<?php echo $_GET['buyer_id'] ?>"
+            <a href="checkout.php?"
              class="btn brand z-depth-0 pulse" style="background-color: #cbb09c !important;">
               Checkout
             </a>

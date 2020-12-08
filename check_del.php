@@ -12,12 +12,7 @@
   }else if (isset($_GET['buyer_id']) && isset($_GET['visa_masterCard'])) {
     $buyer_id = $_GET['buyer_id'];
     $visa_masterCard = $_GET['visa_masterCard'];
-    // echo "$buyer_id" ."<br/>";
-    $sql="SELECT * FROM buyer_profile WHERE buyer_id = '".$buyer_id."'";
-    $result = mysqli_query($conn, $sql);
-    $buyer_info = mysqli_fetch_assoc($result);
 
-    if ($visa_masterCard == $buyer_info['visa_masterCard']) {
       $sql2 = "SELECT * FROM added_to_cart";
       $result2 = mysqli_query($conn, $sql2);
       $item_ids = mysqli_fetch_all($result2, MYSQLI_ASSOC);
@@ -39,10 +34,6 @@
         mysqli_close($conn);
         header("Location:dash.php?buyer_id=".$buyer_id."");
       }
-    }else{
-      echo '<script type ="text/Javascript">alert("PIN incorrect. Please go back to the previous page.");</script>';
-      // header("Location:checkout.php?buyer_id=".$buyer_id."");
-    }
   } else if (isset($_GET['buyer_id'])) {
     $buyer_id = $_GET['buyer_id'];
     $sql = "DELETE FROM added_to_cart";

@@ -3,21 +3,34 @@
 1. how do i deduct the frequency of the items -->
 <?php
   include('config/db_connect.php');
+  include('s_start.php');
 
   if (isset($_POST['submit'])) {
     $buyer_id = $_POST['buyer_id'];
     $visa_masterCard = $_POST['visa_masterCard'];
-    header("Location: check_del.php?buyer_id=".$buyer_id."&visa_masterCard=".$visa_masterCard."");
-  }else if (isset($_GET['buyer_id'])) {
-      $buyer_id = $_GET['buyer_id'];
-      $sql = "SELECT * from added_to_cart where buyer_id='".$buyer_id."'";
-      $result = mysqli_query($conn, $sql);
-      $lists = mysqli_fetch_all($result, MYSQLI_ASSOC);
-      mysqli_free_result($result);
-      mysqli_close($conn);
-  }else {
-      echo "Query Error: " . mysqli_error($conn);
+
+    $sql="SELECT * FROM buyer_profile WHERE buyer_id = '".$buyer_id."'";
+    $result = mysqli_query($conn, $sql);
+    $buyer_info = mysqli_fetch_assoc($result);
+
+    if ($visa_masterCard == $buyer_info['visa_masterCard']) {
+      header("Location: check_del.php?buyer_id=".$buyer_id."&visa_masterCard=".$visa_masterCard."");
+      exit();
+    }else{
+      echo '<script type ="text/Javascript">alert("NOT A USER OF THIS WEBSITE");</script>';
+    }
+
   }
+
+    $buyer_id = $b_id;
+    $sql = "SELECT * from added_to_cart where buyer_id='".$buyer_id."'";
+    $result = mysqli_query($conn, $sql);
+    $lists = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    mysqli_free_result($result);
+    mysqli_close($conn);
+  // else {
+  //     echo "Query Error: " . mysqli_error($conn);
+  // }
 
  ?>
 
@@ -30,7 +43,7 @@
   <div class="check">
     <section class="container center">
       <div class="left-align">
-        <a href="dash.php?buyer_id=<?php echo $_GET['buyer_id']?>" class="btn brand">Go Back</a>
+        <a href="dash.php?buyer_id=<?php echo $b_id?>" class="btn brand">Go Back</a>
       </div>
       <h4 class="center">Shopping Cart</h4>
       <div class="card">
