@@ -12,27 +12,19 @@
   }else if (isset($_GET['buyer_id']) && isset($_GET['visa_masterCard'])) {
     $buyer_id = $_GET['buyer_id'];
     $visa_masterCard = $_GET['visa_masterCard'];
-    echo "$buyer_id" ."<br/>";
+    // echo "$buyer_id" ."<br/>";
     $sql="SELECT * FROM buyer_profile WHERE buyer_id = '".$buyer_id."'";
     $result = mysqli_query($conn, $sql);
     $buyer_info = mysqli_fetch_assoc($result);
 
     if ($visa_masterCard == $buyer_info['visa_masterCard']) {
-      $sql2 = "SELECT item_id AS item_ids FROM added_to_cart";
+      $sql2 = "SELECT item_id FROM added_to_cart";
       $result2 = mysqli_query($conn, $sql2);
       $item_ids = mysqli_fetch_all($result2, MYSQLI_ASSOC);
       $emptyArray = [];
 
       foreach($item_ids as $item_id){
-        foreach($item_id as $i){
-          array_push($emptyArray,$i);
-        }
-      }
-
-      $emptyArray = array_unique($emptyArray);
-      // print_r($emptyArray);
-
-      foreach ($emptyArray as $i) {
+        $i = $item_id['item_id'];
         $sql3 =  "INSERT INTO sold_info(buyer_id, item_id, frequency) VALUES ($buyer_id, $i, 80)";
         $result3 = mysqli_query($conn, $sql3);
         if(!$result3){
