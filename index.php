@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Arts&Crafts</title>
+    <title>Shop My Crafty Arts</title>
     <link rel="stylesheet" href="style.css">
     <!-- Compiled and minified CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -16,7 +16,7 @@
         <div class="image-box__overlay"></div>
         <div class="image-box__content">
           <div class="bigInfo">
-            <a href="#" style="color: white; font-size: 40px; font-family: 'Yellowtail', cursive; z-index: 4;">Arts&Crafts</a>
+            <a href="#" style="color: white; font-size: 40px; font-family: 'Yellowtail', cursive; z-index: 4;">Shop My Crafty Arts</a>
               <div class="center">
                 <h3><i>Welcome To Our Shop!!</i></h3>
                 <h1>IT'S NICE TO MEET YOU</h1>

@@ -6,7 +6,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Arts&Crafts</title>
+  <title>Shop My Crafty Arts</title>
   <!-- Compiled and minified CSS -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
    <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -32,7 +32,7 @@
     <nav class="white z-depth-0">
       <div class="container">
         <!-- // Work remain. Only goes iff the user is signed in -->
-        <a href="#" class="brand-logo brand-text" style="font-family: 'Yellowtail', cursive;">Arts&Crafts</a>
+        <a href="#" class="brand-logo brand-text" style="font-family: 'Yellowtail', cursive;">Shop My Crafty Arts</a>
         <ul id="nav-mobile" class="right hide-on-small-and-down">
           <li>
             <a href="signup.php" class="btn brand z-depth-0">Sign Up</a>

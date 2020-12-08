@@ -27,31 +27,34 @@
 
   <?php include('templates/header.php') ?>
 
-  <br><br><br><br>
-  <h4 class="center grey-text">Welcome <?php echo $buyer_info['first_name'] ?></h4>
+  <div class="dash">
+    <br><br><br><br>
+    <h4 class="center white-text" style="font-weight: bold;">Welcome <?php echo $buyer_info['first_name'] ?></h4>
 
-  <div class="container">
-    <div class="row">
-      <?php foreach ($items_info as $item_info): ?>
+    <div class="container">
+      <div class="row">
+        <?php foreach ($items_info as $item_info): ?>
 
-        <div class="col s6 md3">
-          <div class="card z-depth-0">
-            <img class="dash-image" src="img/<?php echo $item_info['item_id'] ?>.jpg" alt="">
-            <div class="card-content center">
-              <h5><?php echo htmlspecialchars($item_info['item_name']) ?></h5>
-              <div>Sellig Price: <?php echo htmlspecialchars($item_info['sell_price']) ?></div>
-              <div>In Stock: <?php echo htmlspecialchars($item_info['in_stock']) ?></div>
-            </div>
-            <div class="card-action right-align">
-              <a href="details.php?buyer_id=<?php echo $_GET['buyer_id'] ?>&item_id=<?php echo $item_info['item_id'] ?>" class="brand-text">More Info</a>
+          <div class="col s6 md3">
+            <div class="card z-depth-0">
+              <img class="dash-image" src="img/<?php echo $item_info['item_id'] ?>.jpg" alt="">
+              <div class="card-content center">
+                <h5><?php echo htmlspecialchars($item_info['item_name']) ?></h5>
+                <div>Sellig Price: <?php echo htmlspecialchars($item_info['sell_price']) ?></div>
+                <div>In Stock: <?php echo htmlspecialchars($item_info['in_stock']) ?></div>
+              </div>
+              <div class="card-action right-align">
+                <a href="details.php?buyer_id=<?php echo $_GET['buyer_id'] ?>&item_id=<?php echo $item_info['item_id'] ?>" class="brand-text">More Info</a>
+              </div>
             </div>
           </div>
-        </div>
-      <?php  endforeach; ?>
+        <?php  endforeach; ?>
+      </div>
     </div>
+      <?php include('templates/footer.php') ?>
   </div>
 
-  <?php include('templates/footer.php') ?>
+
   </body>
 </html>
 
