@@ -33,6 +33,9 @@
       $userInfo = mysqli_fetch_assoc($result);
 
       if($userInfo['password'] == $password){
+        session_start();
+        $_SESSION['buyer_id'] = $userInfo['buyer_id'];
+
         header("Location:dash.php?buyer_id=".$userInfo['buyer_id']."");
         exit();
       }else{

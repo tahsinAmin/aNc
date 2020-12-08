@@ -3,6 +3,7 @@
  -->
 <?php
 	include('config/db_connect.php');
+	include('s_start.php');
 
 	// check GET request item_id param
 	if (isset($_GET['item_id']) && isset($_GET['buyer_id'])) {

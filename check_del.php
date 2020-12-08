@@ -9,24 +9,11 @@
     $result = mysqli_query($conn, $sql);
     $buyer_info = mysqli_fetch_assoc($result);
 
-    echo "$visa_masterCard" ."<br/>";
-    // echo "$buyer_info['visa_masterCard']" ."<br/>";
-    // print_r($buyer_info);
-    // echo "<br/>";
-
-
-
     if ($visa_masterCard == $buyer_info['visa_masterCard']) {
-
       $sql2 = "SELECT item_id AS item_ids FROM added_to_cart";
       $result2 = mysqli_query($conn, $sql2);
       $item_ids = mysqli_fetch_all($result2, MYSQLI_ASSOC);
-      // print_r($buyer_info);
-      // echo "<br/>";
-      // print_r($item_ids);
-
       $emptyArray = [];
-
 
       foreach($item_ids as $item_id){
         foreach($item_id as $i){
@@ -55,6 +42,7 @@
     $buyer_id = $_GET['buyer_id'];
     $sql = "DELETE FROM added_to_cart";
     if (mysqli_query($conn, $sql)) {
+      session_unset();
       header("Location:index.php?");
     }
   }

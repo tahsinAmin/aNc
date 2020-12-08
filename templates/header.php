@@ -54,7 +54,9 @@
   <body class="grey lighten-4">
     <nav class="white z-depth-0">
       <div class="container">
-        <a href="dash.php?buyer_id=<?php echo $buyer_id ?>" class="brand-logo brand-text" style="font-family: 'Yellowtail', cursive;">Arts&Crafts</a> // Work remain. Only goes iff the user is signed in
+        <a href="dash.php?buyer_id=<?php echo $buyer_id ?>" class="brand-logo brand-text" style="font-family: 'Yellowtail', cursive;">
+          Arts&Crafts
+        </a>
         <ul id="nav-mobile" class="right hide-on-small-and-down">
           <li>
             <a href="checkout.php?buyer_id=<?php echo $_GET['buyer_id'] ?>"

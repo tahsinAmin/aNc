@@ -2,6 +2,11 @@
 1. MAKE NSURE THAT A USER CAN'T LOGIN USING THE URL -->
 <?php
   include('config/db_connect.php');
+  include('s_start.php');
+
+  $sql = "SELECT * FROM buyer_profile WHERE buyer_id='".$b_id."'";
+  $result = mysqli_query($conn, $sql);
+  $buyer_info = mysqli_fetch_assoc($result);
 
   // check GET request item_id param
 	if (isset($_GET['buyer_id'])) {
@@ -23,7 +28,7 @@
   <?php include('templates/header.php') ?>
 
   <br><br><br><br>
-  <h4 class="center grey-text">Wow!</h4>
+  <h4 class="center grey-text">Welcome <?php echo $buyer_info['first_name'] ?></h4>
 
   <div class="container">
     <div class="row">
