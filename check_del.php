@@ -39,6 +39,9 @@
         mysqli_close($conn);
         header("Location:dash.php?buyer_id=".$buyer_id."");
       }
+    }else{
+      echo '<script type ="text/Javascript">alert("PIN incorrect. Please go back to the previous page.");</script>';
+      // header("Location:checkout.php?buyer_id=".$buyer_id."");
     }
   } else if (isset($_GET['buyer_id'])) {
     $buyer_id = $_GET['buyer_id'];
