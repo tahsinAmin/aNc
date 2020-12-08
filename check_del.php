@@ -25,8 +25,9 @@
 
       foreach($item_ids as $item_id){
         $i = $item_id['item_id'];
+        $f = $item_id['frequency'];
 
-        $sql3 =  "INSERT INTO sold_info(buyer_id, item_id, frequency) VALUES ($buyer_id, $i, 80)";
+        $sql3 =  "INSERT INTO sold_info(buyer_id, item_id, frequency) VALUES ($buyer_id, $i, $f)";
         $result3 = mysqli_query($conn, $sql3);
         if(!$result3){
           echo "Query Error: " . mysqli_error($conn);
