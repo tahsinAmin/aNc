@@ -27,55 +27,59 @@
 	<?php include('templates/header.php'); ?>
 
   <br><br><br><br>
-  <section class="container center">
-    <div class="left-align">
-      <a href="dash.php?buyer_id=<?php echo $_GET['buyer_id']?>" class="btn brand">Go Back</a>
-    </div>
-    <h4 class="center">Shopping Cart</h4>
-    <div class="card">
-      <div class="col s6 md4">
-        <table>
-            <thead>
-              <tr>
-                  <th class="center">Item ID</th>
-                  <th class="center">Quantity</th>
-                  <th class="center">Amount</th>
-                  <th></th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <?php $sum = 0; ?>
-              <?php foreach ($lists as $list): ?>
+  <div class="check">
+    <section class="container center">
+      <div class="left-align">
+        <a href="dash.php?buyer_id=<?php echo $_GET['buyer_id']?>" class="btn brand">Go Back</a>
+      </div>
+      <h4 class="center">Shopping Cart</h4>
+      <div class="card">
+        <div class="col s6 md4">
+          <table>
+              <thead>
                 <tr>
-                  <td class="center"><?php echo htmlspecialchars($list['item_id']) ?></td>
-                  <td class="center"><?php echo htmlspecialchars($list['frequency']) ?></td>
-                  <td class="center"><?php echo htmlspecialchars($list['amount_to_pay']) ?></td>
-                  <?php $sum += $list['amount_to_pay'] ?>
-                  <td>
-                    <a href="check_del.php?buyer_id=<?php echo $list['buyer_id'] ?>&item_id=<?php echo $list['item_id'] ?>" class="brand-text">Delete</a>
-                  </td>
+                    <th class="center">Item ID</th>
+                    <th class="center">Quantity</th>
+                    <th class="center">Amount</th>
+                    <th></th>
                 </tr>
-              <?php  endforeach; ?>
-            </tbody>
-          </table>
+              </thead>
+
+              <tbody>
+                <?php $sum = 0; ?>
+                <?php foreach ($lists as $list): ?>
+                  <tr>
+                    <td class="center"><?php echo htmlspecialchars($list['item_id']) ?></td>
+                    <td class="center"><?php echo htmlspecialchars($list['frequency']) ?></td>
+                    <td class="center"><?php echo htmlspecialchars($list['amount_to_pay']) ?></td>
+                    <?php $sum += $list['amount_to_pay'] ?>
+                    <td>
+                      <a href="check_del.php?buyer_id=<?php echo $list['buyer_id'] ?>&item_id=<?php echo $list['item_id'] ?>" class="brand-text">Delete</a>
+                    </td>
+                  </tr>
+                <?php  endforeach; ?>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <form class="col s6 md3 center" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-      <h5>Total Amount: <?php echo "OMR " . $sum ?></h5>
-      Enter PIN to confirm Purchase:
-      <div class="input-field inline">
-        <input name="visa_masterCard" type="password" required>
-      </div>
-      <input type="hidden" name="buyer_id" value="<?php echo $buyer_id; ?>">
-      <div class="right-align">
+      <form class="col s6 md3 container center white" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+        <h5>Total Amount: <?php echo "OMR " . $sum ?></h5>
+        Enter PIN to confirm Purchase:
+        <div class="input-field inline">
+          <input name="visa_masterCard" type="password" required>
+        </div>
+        <input type="hidden" name="buyer_id" value="<?php echo $buyer_id; ?>">
+        <div class="center">
 
-        <input type="submit" name="submit" value="Confirm Purchase" class="input-field btn brand">
-      </div>
-    </form>
+          <input type="submit" name="submit" value="Confirm Purchase" class="input-field btn brand">
+        </div>
+      </form>
+        <?php include('templates/footer.php') ?>
+  </div>
 
 
-  <?php include('templates/footer.php') ?>
+
+
 </body>

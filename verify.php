@@ -61,10 +61,13 @@ if(isset($_POST['submit'])){
 <!DOCTYPE html>
 <html>
 
-	<?php include('templates/header0.php'); ?>
 
-  <section class="container grey-text">
-		<h4 class="center">Reset Password</h4>
+
+  <section class=" verify">
+
+    	<?php include('templates/header0.php'); ?>
+          <br><br><br>
+		<h4 class="center white-text">Reset Password</h4>
 		<form class="white" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
       <label>Last Name</label>
       <input type="text" name="last_name" value="<?php echo htmlspecialchars($last_name) ?>" required>
@@ -80,8 +83,9 @@ if(isset($_POST['submit'])){
 				<input type="submit" name="submit" value="Submit" class="btn brand z-depth-0">
 			</div>
 		</form>
+    	<?php include('templates/footer.php'); ?>
 	</section>
 
-	<?php include('templates/footer.php'); ?>
+
 
 </html>

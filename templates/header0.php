@@ -16,15 +16,19 @@
        font-family: 'Roboto', sans-serif;
      }
      .brand{
-       background: #009688 !important;
+       background: #137af9 !important;
      }
      .brand-text{
-       color: #009688 !important;
+       color: #137af9 !important;
      }
      form{
        max-width: 460px;
        margin: 20px auto;
        padding: 20px;
+     }
+     .verify{
+       background-image: url('img/nice.jpg');
+       height: 100vh;
      }
    </style>
 </head>

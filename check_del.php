@@ -1,7 +1,15 @@
 <?php
   $link = include('config/db_connect.php');
 
-  if (isset($_GET['buyer_id']) && isset($_GET['visa_masterCard'])) {
+  if(isset($_GET['buyer_id'])&& isset($_GET['item_id'])){
+    $buyer_id = $_GET['buyer_id'];
+    $item_id = $_GET['item_id'];
+
+    $sql = "DELETE FROM added_to_cart WHERE buyer_id='".$buyer_id."' AND item_id='".$item_id."'";
+    if (mysqli_query($conn, $sql)) {
+      header("Location:checkout.php?buyer_id=".$buyer_id."");
+    }
+  }else if (isset($_GET['buyer_id']) && isset($_GET['visa_masterCard'])) {
     $buyer_id = $_GET['buyer_id'];
     $visa_masterCard = $_GET['visa_masterCard'];
     echo "$buyer_id" ."<br/>";
@@ -25,7 +33,7 @@
       // print_r($emptyArray);
 
       foreach ($emptyArray as $i) {
-        $sql3 =  "INSERT INTO sold_info(buyer_id, item_id, profit_gain) VALUES ($buyer_id, $i, 80)";
+        $sql3 =  "INSERT INTO sold_info(buyer_id, item_id, frequency) VALUES ($buyer_id, $i, 80)";
         $result3 = mysqli_query($conn, $sql3);
         if(!$result3){
           echo "Query Error: " . mysqli_error($conn);
@@ -46,14 +54,4 @@
       header("Location:index.php?");
     }
   }
-
-	if(isset($_GET['buyer_id'])&& isset($_GET['item_id'])){
-		$buyer_id = $_GET['buyer_id'];
-    $item_id = $_GET['item_id'];
-
-    $sql = "DELETE FROM added_to_cart WHERE buyer_id='".$buyer_id."' AND item_id='".$item_id."'";
-    if (mysqli_query($conn, $sql)) {
-      header("Location:checkout.php?buyer_id=".$buyer_id."");
-    }
-	}
 ?>

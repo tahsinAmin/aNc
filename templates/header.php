@@ -50,6 +50,11 @@
        nav{
          padding: 0 40px;
        }
+       .check{
+         background-image: url('img/n.jpg');
+         height: 100vh;
+       }
+       
    </style>
 </head>
   <body class="">
