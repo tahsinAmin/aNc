@@ -18,8 +18,8 @@
           <div class="bigInfo">
             <a href="#" style="color: white; font-size: 40px; font-family: 'Yellowtail', cursive; z-index: 4;">Shop My Crafty Arts</a>
               <div class="center">
-                <h3><i>Welcome To Our Shop!!</i></h3>
-                <h1>IT'S NICE TO MEET YOU</h1>
+                <h1><i>Welcome To Our Shop!!</i></h1>
+                <h4>It’s an E-commerce website where users can buy crafts and stationaries</h4>
                 <a href="signin.php" class="btn btn-large light-blue darken-2 pulse" style="font-weight: bold; background-color: #008bef !important;">TELL US MORE</a>
               </div>
             </div>

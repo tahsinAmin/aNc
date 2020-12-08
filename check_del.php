@@ -32,7 +32,8 @@
       $sql3 = "DELETE FROM added_to_cart";
       if (mysqli_query($conn, $sql3)) {
         mysqli_close($conn);
-        header("Location:dash.php?buyer_id=".$buyer_id."");
+        // header("Location:dash.php?buyer_id=".$buyer_id."");
+        header("Location:sand.php");
       }
   } else if (isset($_GET['buyer_id'])) {
     $buyer_id = $_GET['buyer_id'];

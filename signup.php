@@ -122,10 +122,12 @@
 <!DOCTYPE html>
 <html>
 
+
+<div class="su">
 	<?php include('templates/header0.php'); ?>
 
 	<section class="container grey-text">
-		<h4 class="center">Sign Up</h4>
+		<h4 class="center white-text" style="font-weight: bold;">Sign Up</h4>
 		<form class="white" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 
 
@@ -159,6 +161,7 @@
 			</div>
 		</form>
 	</section>
+  </div>
 
 	<?php include('templates/footer.php'); ?>
 

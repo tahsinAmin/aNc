@@ -48,17 +48,17 @@
 
 <!DOCTYPE html>
 <html>
-
-	<?php include('templates/header0.php'); ?>
-
+  <div class="signin">
+    	<?php include('templates/header0.php'); ?>
+      <br><br><br><br><br><br>
 	<section class="container grey-text">
-		<h4 class="center">Sign In</h4>
-		<form class="white" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+		<h4 class="center white-text" style="font-weight: bold;">Sign In</h4>
+		<form class="" action="<?php echo $_SERVER['PHP_SELF'] ?>" style="background-color: #111725e3 !important;" method="POST">
       <label>First Name</label>
-      <input type="text" name="first_name" value="<?php echo htmlspecialchars($first_name) ?>" required>
+      <input type="text" name="first_name" class="classy-text" value="<?php echo htmlspecialchars($first_name) ?>" required>
       <div class="red-text"><?php echo $errors['first_name']; ?></div>
       <label>Password</label>
-      <input type="text" name="password" value="<?php echo htmlspecialchars($password) ?>" required>
+      <input type="text" name="password" class="classy-text" value="<?php echo htmlspecialchars($password) ?>" required>
       <div class="red-text"><?php echo $errors['password']; ?></div>
 			<div class="center">
 				<input type="submit" name="submit" value="Submit" class="btn brand z-depth-0" required>
@@ -70,5 +70,6 @@
 	</section>
 
 	<?php include('templates/footer.php'); ?>
+  </div>
 
 </html>

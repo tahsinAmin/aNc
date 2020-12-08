@@ -17,9 +17,8 @@
       header("Location: check_del.php?buyer_id=".$buyer_id."&visa_masterCard=".$visa_masterCard."");
       exit();
     }else{
-      echo '<script type ="text/Javascript">alert("NOT A USER OF THIS WEBSITE");</script>';
+      echo '<script type ="text/Javascript">alert("Wrong pin, You may try again");</script>';
     }
-
   }
 
     $buyer_id = $b_id;
@@ -85,14 +84,9 @@
         </div>
         <input type="hidden" name="buyer_id" value="<?php echo $buyer_id; ?>">
         <div class="center">
-
           <input type="submit" name="submit" value="Confirm Purchase" class="input-field btn brand">
         </div>
       </form>
-        <?php include('templates/footer.php') ?>
+      <?php include('templates/footer.php') ?>
   </div>
-
-
-
-
 </body>

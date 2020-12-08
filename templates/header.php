@@ -7,7 +7,7 @@
   <title>Shop My Crafty Arts</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Yellowtail&display=swap" rel="stylesheet"> <script src="https://kit.fontawesome.com/1b49d7e787.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Yellowtail&display=swap" rel="stylesheet"> <script src="https://kit.fontawesome.com/1b49d7e787.js"></script>
    <style media="screen">
      body{
        font-family: 'Roboto', sans-serif;
@@ -54,6 +54,7 @@
          background-image: url('img/n.jpg');
          height: 100vh;
        }
+
 
    </style>
 </head>

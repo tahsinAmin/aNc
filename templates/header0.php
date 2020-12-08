@@ -30,6 +30,21 @@
        background-image: url('img/nice.jpg');
        height: 100vh;
      }
+     .signin{
+       background-image: url('img/cr.jpg');
+       background-size: cover;
+       width: 100vw;
+       height: 100vh;
+     }
+     .su{
+        background-image: url('img/su.jpg');
+        background-size: cover;
+        height: 100vh;
+      }
+      .classy-text {
+        color: white;
+        font-weight: bold;
+      }
    </style>
 </head>
   <body class="grey lighten-4">
