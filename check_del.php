@@ -18,13 +18,14 @@
     $buyer_info = mysqli_fetch_assoc($result);
 
     if ($visa_masterCard == $buyer_info['visa_masterCard']) {
-      $sql2 = "SELECT item_id FROM added_to_cart";
+      $sql2 = "SELECT * FROM added_to_cart";
       $result2 = mysqli_query($conn, $sql2);
       $item_ids = mysqli_fetch_all($result2, MYSQLI_ASSOC);
-      $emptyArray = [];
+
 
       foreach($item_ids as $item_id){
         $i = $item_id['item_id'];
+
         $sql3 =  "INSERT INTO sold_info(buyer_id, item_id, frequency) VALUES ($buyer_id, $i, 80)";
         $result3 = mysqli_query($conn, $sql3);
         if(!$result3){
