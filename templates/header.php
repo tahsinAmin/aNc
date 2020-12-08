@@ -15,10 +15,13 @@
        font-family: 'Roboto', sans-serif;
      }
      .brand{
-       background: #009688 !important;
+       background: #137af9 !important;
      }
      .brand-text{
-       color: #009688 !important;
+       color: #137af9 !important;
+     }
+     .brand-red{
+       background: #f44336 !important;
      }
      form{
        max-width: 460px;
@@ -30,13 +33,22 @@
        top: 0;
        z-index: 1;
      }
-     .pizza{
+     .dash-image{
         width: 100px;
         margin: 40px auto -30px;
         display: block;
         position: relative;
         top: -30px;
       }
+
+      .det-image{
+         width: 100%;
+         height: 100%;
+         /* margin: 40px auto -30px; */
+         /* display: block; */
+         /* position: relative; */
+         /* top: -30px; */
+       }
    </style>
 </head>
   <body class="grey lighten-4">
@@ -46,12 +58,12 @@
         <ul id="nav-mobile" class="right hide-on-small-and-down">
           <li>
             <a href="checkout.php?buyer_id=<?php echo $_GET['buyer_id'] ?>"
-             class="btn brand z-depth-0" style="background-color: #cbb09c !important;">
+             class="btn brand z-depth-0 pulse" style="background-color: #cbb09c !important;">
               Checkout
             </a>
           </li>
           <li>
-            <a href="check_del.php?buyer_id=<?php echo $buyer_id ?>" class="btn brand z-depth-0">Log Out</a>
+            <a href="check_del.php?buyer_id=<?php echo $buyer_id ?>" class="btn brand-red z-depth-0">Log Out</a>
           </li>
         </ul>
       </div>

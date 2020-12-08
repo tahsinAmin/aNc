@@ -31,7 +31,7 @@
 
         <div class="col s6 md3">
           <div class="card z-depth-0">
-            <img class="pizza" src="img/<?php echo $item_info['item_id'] ?>.jpg" alt="">
+            <img class="dash-image" src="img/<?php echo $item_info['item_id'] ?>.jpg" alt="">
             <div class="card-content center">
               <h5><?php echo htmlspecialchars($item_info['item_name']) ?></h5>
               <div>Sellig Price: <?php echo htmlspecialchars($item_info['sell_price']) ?></div>

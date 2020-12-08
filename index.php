@@ -11,26 +11,19 @@
    </head>
   <body>
     <div class="image-box">
-
-  <div class="image-box__background"
-    style="--image-url: url('img/ab.jpg')">
-
-</div>
-
-  <div class="image-box__overlay"></div>
-
-  <div class="image-box__content">
-
-    <div class="bigInfo">
-<a href="#" style="color: white; font-size: 40px; font-family: 'Yellowtail', cursive; z-index: 4;">Arts&Crafts</a>
-    <div class="center">
-      <h3><i>Welcome To Our Shop!!</i></h3>
-      <h1>IT'S NICE TO MEET YOU</h1>
-      <a href="signin.php" class="btn btn-large light-blue darken-2 pulse" style="font-weight: bold; background-color: #008bef !important;">TELL US MORE</a>
-    </div>
-    </div>
-    <!-- <h1>Buy our product</h1> -->
-  </div>
-</div>
+      <div class="image-box__background"
+        style="--image-url: url('img/ab.jpg')"></div>
+        <div class="image-box__overlay"></div>
+        <div class="image-box__content">
+          <div class="bigInfo">
+            <a href="#" style="color: white; font-size: 40px; font-family: 'Yellowtail', cursive; z-index: 4;">Arts&Crafts</a>
+              <div class="center">
+                <h3><i>Welcome To Our Shop!!</i></h3>
+                <h1>IT'S NICE TO MEET YOU</h1>
+                <a href="signin.php" class="btn btn-large light-blue darken-2 pulse" style="font-weight: bold; background-color: #008bef !important;">TELL US MORE</a>
+              </div>
+            </div>
+          </div>
+        </div>
   </body>
 </html>

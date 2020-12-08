@@ -1,5 +1,4 @@
 <!-- NOTE: WORK remain:
-1. sHOW IT AS A LIST FOR item_description
 2. sHOIW THE IMAGE
  -->
 <?php
@@ -60,11 +59,19 @@
 	<?php include('templates/header.php'); ?>
 	<br><br><br><br><br><br>
 	<div class="container">
-		<div>
+		<div class="row">
+			<div class="col s12">
+				<a href="dash.php?buyer_id=<?php echo $_GET['buyer_id']?>" class="btn brand">Go Back</a>
+				<br><br>
+			</div>
+
+
 				<?php if($item): ?>
-				<div class="col s6 md3">
-					<a href="dash.php?buyer_id=<?php echo $_GET['buyer_id']?>" class="btn brand">Go Back</a>
-					<br><br>
+				<div class="col s6">
+					<img class="det-image" src="img/<?php echo $item['item_id'] ?>.jpg" alt="">
+				</div>
+				<div class="col s6">
+
 					<div class="card z-depth-0">
 						<div class="card-content center">
 							<h4><?php echo htmlspecialchars($item['item_name']); ?></h4>
@@ -74,7 +81,6 @@
 										<li><?php echo htmlspecialchars($desc); ?></li>
 									<?php endforeach; ?>
 								</ul>
-								<!-- <?php  echo htmlspecialchars($item['item_description']); ?> -->
 							</p>
 						</div>
 
@@ -86,7 +92,6 @@
 								<input type="submit" name="submit" value="Add" class="btn brand">
 							</div>
 						</form>
-
 					</div>
 				</div>
 		</div>
