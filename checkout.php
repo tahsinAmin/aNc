@@ -63,11 +63,11 @@
       </div>
     </section>
 
-    <form class="col s6 md3 center" action="checkout.php" method="post">
+    <form class="col s6 md3 center" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
       <h5>Total Amount: <?php echo "OMR " . $sum ?></h5>
       Enter PIN to confirm Purchase:
       <div class="input-field inline">
-        <input name="visa_masterCard" type="password" class="">
+        <input name="visa_masterCard" type="password" required>
       </div>
       <input type="hidden" name="buyer_id" value="<?php echo $buyer_id; ?>">
       <div class="right-align">

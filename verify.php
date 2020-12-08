@@ -50,6 +50,8 @@ if(isset($_POST['submit'])){
 
       if (mysqli_query($conn, $sql)) {
         header("Location:signin.php");
+      }else{
+        echo '<script type ="text/Javascript">alert("There was an error");</script>';
       }
     }
 	} // end POST check
@@ -63,7 +65,7 @@ if(isset($_POST['submit'])){
 
   <section class="container grey-text">
 		<h4 class="center">Reset Password</h4>
-		<form class="white" action="verify.php" method="POST">
+		<form class="white" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
       <label>Last Name</label>
       <input type="text" name="last_name" value="<?php echo htmlspecialchars($last_name) ?>" required>
       <div class="red-text"><?php echo $errors['last_name']; ?></div>

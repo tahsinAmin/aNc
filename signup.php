@@ -126,7 +126,7 @@
 
 	<section class="container grey-text">
 		<h4 class="center">Sign Up</h4>
-		<form class="white" action="signup.php" method="POST">
+		<form class="white" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 
 
       <label>First Name</label>

@@ -50,7 +50,7 @@
 
 	<section class="container grey-text">
 		<h4 class="center">Sign In</h4>
-		<form class="white" action="signin.php" method="POST">
+		<form class="white" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
       <label>First Name</label>
       <input type="text" name="first_name" value="<?php echo htmlspecialchars($first_name) ?>" required>
       <div class="red-text"><?php echo $errors['first_name']; ?></div>

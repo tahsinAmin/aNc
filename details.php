@@ -87,10 +87,10 @@
 							</p>
 						</div>
 
-						<form action="details.php" method= "POST">
+						<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method= "POST">
 							<input type="text" name="buyer_id" value="<?php echo "$buyer_id"; ?>" hidden>
 							<input type="number" name="item_id" value="<?php echo "$item_id"; ?>" hidden>
-							Quantity:<input type="number" name="frequency" value=1 min=1 max="<?php echo htmlspecialchars($item['in_stock']);?>" required/>
+							Quantity:<input type="number" name="frequency" value=1 required min=1 max="<?php echo htmlspecialchars($item['in_stock']);?>"/>
 							<div class="right-align">
 								<input type="submit" name="submit" value="Add" class="btn brand">
 							</div>
