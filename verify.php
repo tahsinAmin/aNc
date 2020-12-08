@@ -65,13 +65,13 @@ if(isset($_POST['submit'])){
 		<h4 class="center">Reset Password</h4>
 		<form class="white" action="verify.php" method="POST">
       <label>Last Name</label>
-      <input type="text" name="last_name" value="<?php echo htmlspecialchars($last_name) ?>">
+      <input type="text" name="last_name" value="<?php echo htmlspecialchars($last_name) ?>" required>
       <div class="red-text"><?php echo $errors['last_name']; ?></div>
       <label>Email</label>
-      <input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>">
+      <input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>" required>
       <div class="red-text"><?php echo $errors['email']; ?></div>
       <label>Password</label>
-      <input type="text" name="password" value="<?php echo htmlspecialchars($password) ?>">
+      <input type="text" name="password" value="<?php echo htmlspecialchars($password) ?>" required>
       <div class="red-text"><?php echo $errors['password']; ?></div>
 
 			<div class="center">

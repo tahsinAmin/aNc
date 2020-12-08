@@ -130,28 +130,28 @@
 
 
       <label>First Name</label>
-      <input type="text" name="first_name" value="<?php echo htmlspecialchars($first_name) ?>">
+      <input type="text" name="first_name" value="<?php echo htmlspecialchars($first_name) ?>" required>
       <div class="red-text"><?php echo $errors['first_name']; ?></div>
       <label>Last Name</label>
-      <input type="text" name="last_name" value="<?php echo htmlspecialchars($last_name) ?>">
+      <input type="text" name="last_name" value="<?php echo htmlspecialchars($last_name) ?>" required>
       <div class="red-text"><?php echo $errors['last_name']; ?></div>
       <label>Location</label>
-      <input type="text" name="location" value="<?php echo htmlspecialchars($location) ?>">
+      <input type="text" name="location" value="<?php echo htmlspecialchars($location) ?>" required>
       <div class="red-text"><?php echo $errors['location']; ?></div>
       <label>Age</label>
-      <input type="text" name="age" value="<?php echo htmlspecialchars($age) ?>">
+      <input type="text" name="age" value="<?php echo htmlspecialchars($age) ?>" required>
       <div class="red-text"><?php echo $errors['age']; ?></div>
       <label>Occupation</label>
-      <input type="text" name="occupation" value="<?php echo htmlspecialchars($occupation) ?>">
+      <input type="text" name="occupation" value="<?php echo htmlspecialchars($occupation) ?>" required>
       <div class="red-text"><?php echo $errors['occupation']; ?></div>
       <label>Visa MasterCard</label>
-      <input type="text" name="visa_masterCard" value="<?php echo htmlspecialchars($visa_masterCard) ?>">
+      <input type="text" name="visa_masterCard" value="<?php echo htmlspecialchars($visa_masterCard) ?>" required>
       <div class="red-text"><?php echo $errors['visa_masterCard']; ?></div>
       <label>Password</label>
-      <input type="text" name="password" value="<?php echo htmlspecialchars($password) ?>">
+      <input type="text" name="password" value="<?php echo htmlspecialchars($password) ?>" required>
       <div class="red-text"><?php echo $errors['password']; ?></div>
       <label>Email</label>
-      <input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>">
+      <input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>" required>
       <div class="red-text"><?php echo $errors['email']; ?></div>
 
 			<div class="center">

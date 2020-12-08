@@ -4,20 +4,20 @@
 
   $first_name = $password = '';
 
-  $errors = array('fname_or_pass' => '');
+  $errors = array('first_name' => '', 'password' => '');
 
 	if(isset($_POST['submit'])){
 
     // check first_name
     if(empty($_POST['first_name'])){
-      $errors['fname_or_pass'] = 'First Name or Password is incorrect';
+      $errors['first_name'] = 'First Name is required';
     } else{
-      $first_name = $_POST['first_name'];
+      $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
     }
 
     // check password
     if(empty($_POST['password'])){
-      $errors['fname_or_pass'] = 'First Name or Password is incorrect';
+      $errors['password'] = 'Password is required';
     } else{
       $password = $_POST['password'];
     }
@@ -25,10 +25,10 @@
     if (array_filter($errors)) {
       // echo "errors in the form";
     }else {
-      $fn = mysqli_real_escape_string($conn, $_POST['first_name']);
+      $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
       $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-      $sql = "SELECT password, buyer_id FROM buyer_profile WHERE first_name='".$fn."'";
+      $sql = "SELECT password, buyer_id FROM buyer_profile WHERE first_name='".$first_name."'";
       $result = mysqli_query($conn, $sql);
       $userInfo = mysqli_fetch_assoc($result);
 
@@ -52,12 +52,13 @@
 		<h4 class="center">Sign In</h4>
 		<form class="white" action="signin.php" method="POST">
       <label>First Name</label>
-      <input type="text" name="first_name" value="<?php echo htmlspecialchars($first_name) ?>">
+      <input type="text" name="first_name" value="<?php echo htmlspecialchars($first_name) ?>" required>
+      <div class="red-text"><?php echo $errors['first_name']; ?></div>
       <label>Password</label>
-      <input type="text" name="password" value="<?php echo htmlspecialchars($password) ?>">
-      <div class="red-text"><?php echo $errors['fname_or_pass']; ?></div>
+      <input type="text" name="password" value="<?php echo htmlspecialchars($password) ?>" required>
+      <div class="red-text"><?php echo $errors['password']; ?></div>
 			<div class="center">
-				<input type="submit" name="submit" value="Submit" class="btn brand z-depth-0">
+				<input type="submit" name="submit" value="Submit" class="btn brand z-depth-0" required>
 			</div>
       <div class="center">
         <a href="verify.php">Forgot Password?</a>

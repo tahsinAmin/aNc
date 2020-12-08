@@ -20,9 +20,12 @@
 
 		// print_r($item);
 	}else if(isset($_POST['submit'])){
-		$frequency = $_POST['frequency'];
 		$buyer_id = $_POST['buyer_id'];
 		$item_id = $_POST['item_id'];
+
+
+		$errors = array('frequency' => '');
+		$frequency = $_POST['frequency'];
 
 		//	$sql = "SELECT item_info.sell_price*added_to_cart.frequency as Amount from item_info inner join added_to_cart on item_info.item_id='".$item_id."'";
 		$sql="SELECT * FROM item_info WHERE item_id = '".$item_id."'";
@@ -87,7 +90,7 @@
 						<form action="details.php" method= "POST">
 							<input type="text" name="buyer_id" value="<?php echo "$buyer_id"; ?>" hidden>
 							<input type="number" name="item_id" value="<?php echo "$item_id"; ?>" hidden>
-							Quantity:<input type="number" name="frequency"min=0 max="<?php echo htmlspecialchars($item['in_stock']); ?>"/>
+							Quantity:<input type="number" name="frequency" value=1 min=1 max="<?php echo htmlspecialchars($item['in_stock']);?>" required/>
 							<div class="right-align">
 								<input type="submit" name="submit" value="Add" class="btn brand">
 							</div>
